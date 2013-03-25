@@ -1,0 +1,28 @@
+﻿@model IPagedList<ForumCategoryViewModel>
+
+@{
+    ViewBag.Title = "viewCategories";
+}
+
+<h2 class="browseCat">Browse Categories(@Model.Count())</h2>
+
+<div id="categoriesList">
+
+@foreach (var item in Model) {
+   
+   <a href="/Home/Category/@item.Id"> <div class="catTitle">   
+        @item.Title
+     </div> </a>
+    
+    <div class="catDescription">   
+        @item.Description
+    </div>    
+}
+
+    <div class="pagedList" data-mvcForum-target="#categoriesList">
+            @Html.PagedListPager(Model, page => Url.Action("ViewCategories", new { page }),
+            PagedListRenderOptions.OnlyShowFivePagesAtATime)
+    </div>
+
+</div>
+

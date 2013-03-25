@@ -1,0 +1,59 @@
+﻿@model FootballZoneMVC4.DAL.OwnersTeam
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>OwnersTeam</legend>
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Owner.OwnerNames)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("OwnerID",String.Empty)
+            @Html.ValidationMessageFor(model => model.Owner.OwnerNames)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Team.Name)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TeamID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Team.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FromDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FromDate)
+            @Html.ValidationMessageFor(model => model.FromDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ToDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ToDate)
+            @Html.ValidationMessageFor(model => model.ToDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

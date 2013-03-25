@@ -1,0 +1,61 @@
+﻿@model FootballZoneMVC4.DAL.SponsorsTeam
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SponsorsTeam</legend>
+
+        @Html.HiddenFor(model => model.SponsorID)
+
+        @Html.HiddenFor(model => model.TeamID)
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Sponsor.Name)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Sponsor.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Team.Name)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Team.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FromDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FromDate)
+            @Html.ValidationMessageFor(model => model.FromDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ToDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ToDate)
+            @Html.ValidationMessageFor(model => model.ToDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

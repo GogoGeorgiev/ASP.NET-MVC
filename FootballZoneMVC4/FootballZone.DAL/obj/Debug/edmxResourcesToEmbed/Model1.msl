@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FootballZoneModelStoreContainer" CdmEntityContainer="FootballZoneMVC4Entities">
+    <EntitySetMapping Name="CoachesTeams">
+      <EntityTypeMapping TypeName="FootballZoneModel.CoachesTeam">
+        <MappingFragment StoreEntitySet="CoachesTeams">
+          <ScalarProperty Name="CoachID" ColumnName="CoachID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="CoachKind" ColumnName="CoachKind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="FootballZoneModel.Country">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FootballMatches">
+      <EntityTypeMapping TypeName="FootballZoneModel.FootballMatch">
+        <MappingFragment StoreEntitySet="FootballMatches">
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="TournamentID" ColumnName="TournamentID" />
+          <ScalarProperty Name="TeamA" ColumnName="TeamA" />
+          <ScalarProperty Name="TeamB" ColumnName="TeamB" />
+          <ScalarProperty Name="FinalScore" ColumnName="FinalScore" />
+          <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+          <ScalarProperty Name="Information" ColumnName="Information" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OwnersTeams">
+      <EntityTypeMapping TypeName="FootballZoneModel.OwnersTeam">
+        <MappingFragment StoreEntitySet="OwnersTeams">
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayersTeams">
+      <EntityTypeMapping TypeName="FootballZoneModel.PlayersTeam">
+        <MappingFragment StoreEntitySet="PlayersTeams">
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="PlayerKind" ColumnName="PlayerKind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Referees">
+      <EntityTypeMapping TypeName="FootballZoneModel.Referee">
+        <MappingFragment StoreEntitySet="Referees">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="RefereeID" ColumnName="RefereeID" />
+          <ScalarProperty Name="RefereeNames" ColumnName="RefereeNames" />
+          <ScalarProperty Name="Biography" ColumnName="Biography" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RefereesMatches">
+      <EntityTypeMapping TypeName="FootballZoneModel.RefereesMatch">
+        <MappingFragment StoreEntitySet="RefereesMatches">
+          <ScalarProperty Name="RefereeID" ColumnName="RefereeID" />
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="RefereeKind" ColumnName="RefereeKind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SponsorsTeams">
+      <EntityTypeMapping TypeName="FootballZoneModel.SponsorsTeam">
+        <MappingFragment StoreEntitySet="SponsorsTeams">
+          <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stadiums">
+      <EntityTypeMapping TypeName="FootballZoneModel.Stadium">
+        <MappingFragment StoreEntitySet="Stadiums">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="StadiumID" ColumnName="StadiumID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Information" ColumnName="Information" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StadiumsTeams">
+      <EntityTypeMapping TypeName="FootballZoneModel.StadiumsTeam">
+        <MappingFragment StoreEntitySet="StadiumsTeams">
+          <ScalarProperty Name="StadiumID" ColumnName="StadiumID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="FootballZoneModel.Team">
+        <MappingFragment StoreEntitySet="Teams">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Biography" ColumnName="Biography" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sponsors">
+      <EntityTypeMapping TypeName="FootballZoneModel.Sponsor">
+        <MappingFragment StoreEntitySet="Sponsors">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Information" ColumnName="Information" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FootballAssociations">
+      <EntityTypeMapping TypeName="FootballZoneModel.FootballAssociation">
+        <MappingFragment StoreEntitySet="FootballAssociations">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Information" ColumnName="Information" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AssociationID" ColumnName="AssociationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="FootballZoneModel.Player">
+        <MappingFragment StoreEntitySet="Players">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Biography" ColumnName="Biography" />
+          <ScalarProperty Name="PlayerNames" ColumnName="PlayerNames" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tournaments">
+      <EntityTypeMapping TypeName="FootballZoneModel.Tournament">
+        <MappingFragment StoreEntitySet="Tournaments">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="AssociationID" ColumnName="AssociationID" />
+          <ScalarProperty Name="Information" ColumnName="Information" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TournamentID" ColumnName="TournamentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coaches">
+      <EntityTypeMapping TypeName="FootballZoneModel.Coach">
+        <MappingFragment StoreEntitySet="Coaches">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Biography" ColumnName="Biography" />
+          <ScalarProperty Name="CoachNames" ColumnName="CoachNames" />
+          <ScalarProperty Name="CoachID" ColumnName="CoachID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Owners">
+      <EntityTypeMapping TypeName="FootballZoneModel.Owner">
+        <MappingFragment StoreEntitySet="Owners">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Biography" ColumnName="Biography" />
+          <ScalarProperty Name="OwnerNames" ColumnName="OwnerNames" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

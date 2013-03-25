@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - MVC Forum</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link href="~/Content/KendoUI/kendo.common.min.css" type="text/css" rel="stylesheet" />
+        <link href="~/Content/KendoUI/kendo.default.min.css" type="text/css" rel="stylesheet" />
+        <script src="~/Scripts/jquery.min.js" type="text/javascript">  </script>
+        <script src="~/Scripts/kendo.all.min.js" type="text/javascript">  </script>
+        <script src="~/Scripts/kendo.aspnetmvc.min.js" type="text/javascript">  </script>
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("MVC Forum", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="Menu">
+                            <li><a href="/">Home </a></li>
+                            <li><a href="/ForumPosts/Create">Ask Question </a></li>
+                            <li><a href="/ForumCategories/ViewCategories">Categories </a></li>
+                            <li><a href="/ForumUsers/ViewUsers">Users </a></li>
+                            <li><a href="/Home/About">About </a></li>
+                            <li><a href="#">Others Forums </a>
+                                <ul>
+                                    <li><a href="http://forums.academy.telerik.com" target="_blank">Telerik Academy Forum </a> </li>
+                                    <li><a href="http://stackoverflow.com/" target="_blank">StackOverflow Forum </a> </li>
+                                    <li><a href="http://forums.asp.net/1146.aspx/1?MVC" target="_blank">ASP.NET Forum </a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - MVC Forum (For contacts Email me at: <strong>gogo.georgiev90@gmail.com ).</strong> <h3>Regards, Georgi Georgiev</h3> </p>
+                </div>
+            </div>
+        </footer>
+        <script src="~/Scripts/mvcForum.js" type="text/javascript">  </script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"> </script>
+        
+        @RenderSection("scripts", false)
+    </body>
+</html>

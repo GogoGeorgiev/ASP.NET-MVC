@@ -1,0 +1,20 @@
+﻿@model FullForumPostViewModel
+
+<div  id="answersList">
+
+@foreach (var answer in Model.Answers)
+{
+    
+    <div class="viewAnswer">
+        
+        <span> @Html.Raw(answer.Content) </span> <br /> <br/>
+
+        <strong>answered by </strong><a href="/ForumUsers/UserProfile/@answer.UserId" class="userNameLink"><span class="postUser"> @answer.UserName</span></a> <br/>
+
+        <span class="postTime">@answer.CreationTime </span>
+
+    </div>
+    
+}
+   
+</div>

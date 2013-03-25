@@ -1,0 +1,41 @@
+﻿@model FootballZoneMVC4.Models.LoginModel
+
+@{
+    ViewBag.Title = "Влезте";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Въведете вашето потребителско име и парола</h2>
+</hgroup>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "Account")) {
+    @Html.ValidationSummary(true, "Неуспешен вход. Моля поправете грешките и опитайте отново.")
+
+    <fieldset>
+        <legend>Форма за идентификация</legend>
+        <ol>
+            <li>
+                <b>Потребителско име</b><br>
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+               <b>Парола </b><br>
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+               <b>Запомни ме</b>
+            </li>
+        </ol>
+        <input type="submit" value="Вход" />
+    </fieldset>
+    <p>
+        @Html.ActionLink("Регистрирай се,", "Register") ако все още нямате акаунт.
+    </p>
+}

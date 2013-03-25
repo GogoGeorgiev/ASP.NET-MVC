@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballZoneMVC4", "FootballZoneMVC4\FootballZoneMVC4.csproj", "{DF3EE560-11DE-4EE1-84DF-54823B874911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballZoneMVC4.Tests", "FootballZoneMVC4.Tests\FootballZoneMVC4.Tests.csproj", "{006DD249-F600-461B-9069-80D07E12DE56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballZoneMVC4.DAL", "FootballZone.DAL\FootballZoneMVC4.DAL.csproj", "{87424E50-E560-4A72-A21D-245C79E36AB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF3EE560-11DE-4EE1-84DF-54823B874911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF3EE560-11DE-4EE1-84DF-54823B874911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF3EE560-11DE-4EE1-84DF-54823B874911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF3EE560-11DE-4EE1-84DF-54823B874911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006DD249-F600-461B-9069-80D07E12DE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006DD249-F600-461B-9069-80D07E12DE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006DD249-F600-461B-9069-80D07E12DE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006DD249-F600-461B-9069-80D07E12DE56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87424E50-E560-4A72-A21D-245C79E36AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87424E50-E560-4A72-A21D-245C79E36AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87424E50-E560-4A72-A21D-245C79E36AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87424E50-E560-4A72-A21D-245C79E36AB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

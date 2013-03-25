@@ -1,0 +1,62 @@
+﻿@using FootballZoneMVC4.DAL
+@using FootballZoneMVC4.Models
+@model List<RefereeInMatchesViewModel>
+
+@{
+    ViewBag.Title = "viewPlayersInTeams";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 align="center">Подробности</h2>
+
+
+    @foreach (var item in Model)
+    {
+        
+<div class="cont">
+        
+
+<table  class="fmatch">
+    <tr>
+        <th></th>
+        <th>Турнир </th>
+        <th></th> 
+        <th>Отбор</th>
+        <th>Срещу </th>
+        <th>Отбор </th>
+        <th></th>
+        <th>Резултат </th>
+        <th>Дата </th>
+       
+    </tr>
+
+        <div class="cont">
+        
+        <tr>
+            <td><img src="../../Images/ball2.jpg">  </td>
+            <td>@item.Tournament </td>
+            <td>@Html.Image(item.TeamAImage, item.TeamAImage) </td>
+            <td><b>@item.TeamA </b></td>
+            <td>Срещу </td>
+            <td><b>@item.TeamB </b></td>
+            <td>@Html.Image(item.TeamBImage, item.TeamBImage) </td>
+            <td><b>@item.FinalScore </b></td>
+            <td>@item.Date </td>
+           
+       </tr>
+
+        </div>
+         
+        </table>
+             <div class="infoMatch"><h3 align="center">Инфорамция за мача </h3>@item.FootballMatchInfo </div>
+                   <h2 align="center">Съдия </h2>
+                 <div class="image">@Html.Image(@item.ImageUrl, @item.Referee)</div>
+                <div class="name"><p class="nam">@item.Referee </p></div>
+                <p><b>Позиция на рефера: </b>@item.RefereeKind </p>
+                <p><b>Информация --> </b></p>
+                <div class="Detinfo">@item.RefInformation </div>
+  </div>
+    }
+
+

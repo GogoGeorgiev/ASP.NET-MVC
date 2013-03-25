@@ -1,0 +1,72 @@
+﻿@model FootballZoneMVC4.ViewModels.FootballViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+
+  @*  <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Biography)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Biography)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Country.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageUrl)
+    </div>*@
+
+
+    <div align="center" bgcolor="white">
+        @foreach (var item in Model.Teams)
+        {
+            <p>@item.Name </p>
+            
+            <p>@item.Biography </p>
+            
+            <p>@item.Country </p>
+        }
+
+    </div>
+
+    <div align="center" bgcolor="orange">
+        @foreach (var item in Model.Players)
+        {
+            <p>@item.Player </p>
+            
+            <p>@item.FromDate </p>
+            
+            <p>@item.ToDate </p>
+            
+            <p>@item.PlayerKind </p>
+        }
+
+    </div>
+
+<p>
+    
+    @Html.ActionLink("Към отборите...", "ViewTeams")
+</p>
+
+
+

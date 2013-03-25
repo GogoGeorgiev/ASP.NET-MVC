@@ -1,0 +1,61 @@
+﻿@model FullForumPostViewModel
+
+ <div class="votes-viewPost">
+        Rating: <br/>
+        <span class="rating" id="rating_@Model.Id">@Model.Rating</span>
+        <p class="logToVote">Login to Vote</p>
+
+       @if (User.Identity.IsAuthenticated)
+       { 
+          <script>
+             $(".logToVote").remove();
+         </script>
+         <a href="#" class="up-vote" data-id="@Model.Id"><img class="up-arrow" src="~/Images/up-arrow.png" /></a> 
+         <a href="#" class="down-vote" data-id="@Model.Id"><img class="down-arrow" src="~/Images/down-arrow.png" /></a> 
+       }
+        </div>
+
+<div class="postTitle">@Model.Title </div>
+
+    <p class="viewPost">
+
+        <span> @Html.Raw(Model.Content) </span> <br /> <br /> 
+
+        <strong> asked by </strong><a href="/ForumUsers/UserProfile/@Model.UserId" class="userNameLink"> <span class="postUser"> @Model.UserName </span></a> <br/>
+
+        <span class="postTime">@Model.CreationTime </span>  in 
+
+        <a class="catNameLink" href="/Home/Category/@Model.Category"><span class="catName">@Model.CategoryName</span></a>
+
+    </p> 
+
+    <span class="answers">Answers(@Model.Answers.Count())</span>
+
+ @Html.Partial("_Answers", Model)
+
+ @if (User.Identity.IsAuthenticated)
+    {
+    
+        using (Html.BeginForm("DoAnswer", "ForumPosts"))
+        { 
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Answer</legend>
+
+                <div class="editor-field1">
+                    @Html.Hidden("ForumPostId", Model.Id)
+                    <h3>Type your answer below </h3>
+                    @Html.Kendo().Editor().Name("Content").HtmlAttributes(new 
+                                                          { style = "width:645px;height:350px;"}).Value("")
+                    @Html.ValidationMessageFor(model => model.Content)
+                </div>
+
+                <p>
+                    <input type="submit" value="Answer" />
+                </p>
+            </fieldset>
+    
+        }
+    }
+    

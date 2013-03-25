@@ -1,0 +1,41 @@
+﻿@model FootballZoneMVC4.DAL.FootballMatch
+
+<tr @if (Model != null) {
+    @:data-pkey="@Model.MatchID"
+}>
+    <td>
+        @Html.LabelFor(model => model.MatchID)
+        @Html.ValidationMessageFor(model => model.MatchID)
+    </td>
+    <td>
+        @Html.DropDownList("TournamentID", String.Empty)
+        @Html.ValidationMessageFor(model => model.TournamentID)
+    </td>
+    <td>
+        @Html.DropDownList("TeamA", String.Empty)
+        @Html.ValidationMessageFor(model => model.TeamA)
+    </td>
+    <td>
+        @Html.DropDownList("TeamB", String.Empty)
+        @Html.ValidationMessageFor(model => model.TeamB)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.FinalScore)
+        @Html.ValidationMessageFor(model => model.FinalScore)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.MatchDate)
+        @Html.ValidationMessageFor(model => model.MatchDate)
+    </td>
+    <td>
+        @Html.TextAreaFor(model => model.Information)
+        @Html.ValidationMessageFor(model => model.Information)
+    </td>
+    <td>
+@if (ViewContext.RouteData.Values["Action"].ToString() == "Edit") {
+        <button class="editRow">Save</button><button class="cancelEditRow">Cancel</button>
+} else {
+        <button class="createRow">Create</button><button class="cancelCreateRow">Cancel</button>
+}
+    </td>
+</tr>

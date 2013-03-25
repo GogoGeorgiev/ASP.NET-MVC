@@ -1,0 +1,29 @@
+﻿@using FootballZoneMVC4.DAL
+@using FootballZoneMVC4.Models
+@model List<CoachesInTeamsViewModel>
+
+@{
+    ViewBag.Title = "viewPlayersInTeams";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 align="center">Треньор/и в отбора </h2>
+
+
+
+
+    @foreach (var item in Model)
+    {
+        
+        <div class="cont">
+        <div class="image">@Html.Image(@item.ImageUrl, @item.Coach)</div>
+        <div class="name"><p class="nam">@item.Coach </p></div>
+        <p><b> От дата: </b> @item.FromDate </p>
+        <p><b> До дата: </b>@item.ToDate </p>
+        <p><b>Позиция на треньора: </b>@item.CoachKind </p>
+        <p><b>Информация --> </b></p>
+        <div class="Detinfo">@item.Information </div>
+      
+        </div>
+    }

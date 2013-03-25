@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+        @*<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />*@
+        <title>@ViewBag.Title </title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
+        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />
+        <script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")"></script>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("Футболна зона", "Index", "../Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                       @* @Html.Partial("_LoginPartial")*@
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index","../Home" )</li>
+                            <li>@Html.ActionLink("Teams", "Index","AdminTeams" )</li>
+                            <li>@Html.ActionLink("Players", "Index", "AdminPlayers")</li>
+                            <li>@Html.ActionLink("Tournaments", "Index", "AdminTournaments")</li>
+                            <li>@Html.ActionLink("Football Assoc", "Index", "AdminAssociations" )</li>
+                            <li>@Html.ActionLink("Coaches", "Index", "AdminCoaches" )</li>
+                            <li>@Html.ActionLink("Owners", "Index", "AdminOwners" )</li>
+                            <li>@Html.ActionLink("Sponsors", "Index", "AdminSponsors")</li>
+                            <li>@Html.ActionLink("Stadiums", "Index", "AdminStadiums")</li>
+                            <li>@Html.ActionLink("Referees", "Index", "AdminReferees")</li>
+                            <li>@Html.ActionLink("Football Matches", "Index", "AdminFootballMatches")</li>
+                            <li>@Html.ActionLink("Countries", "Index", "AdminCountries")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - Георги Георгиев</p><br>
+                    <p>Футболна зона v1.0</p>
+                </div>
+                <div class="float-right">
+                    <ul id="social">
+                        <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
+                        <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

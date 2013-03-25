@@ -1,0 +1,48 @@
+﻿@model IPagedList<ForumPostViewModel>
+
+<div id="forumList">
+
+@foreach (var item in Model)
+{
+ 
+    <div>
+        <div class="votes">
+        Rating: <br/>
+        <span class="rating" id="rating_@item.Id">@item.Rating</span>
+        <p class="logToVote">Login to Vote</p>
+
+       @if (User.Identity.IsAuthenticated)
+       { 
+          <script>
+             $(".logToVote").remove();
+         </script>
+         <a href="#" class="up-vote" data-id="@item.Id"><img class="up-arrow" src="~/Images/up-arrow.png" /></a> 
+         <a href="#" class="down-vote" data-id="@item.Id"><img class="down-arrow" src="~/Images/down-arrow.png" /></a> 
+       }
+        </div>
+       
+            <div class="ansCount">
+                Answers: 
+            <span>@item.Answers</span>
+        </div>
+       
+        <div class="titleQuestion">
+        <a class="question" href="/Questions/@item.Id/@item.Title"> <span class="linkTitle"> @item.Title </span></a> 
+        <br />
+
+        <p class="userAndTime"> asked by <a href="/ForumUsers/UserProfile/@item.UserId" class="userNameLink"><span class="userName">@item.UserName </span></a> 
+            in <span class="createTime">@item.CreationTime</span> in 
+            <a class="catNameLink" href="/Home/Category/@item.Category"><span class="catName">@item.CategoryName</span></a>
+        </p>
+        </div>
+
+    </div>
+}
+    <div class="pagedList" data-mvcForum-target="#forumList">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
+        PagedListRenderOptions.OnlyShowFivePagesAtATime)
+    </div>
+</div>
+    <script src="~/Scripts/mvcForum.js" type="text/javascript">  </script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"> </script>
+ 

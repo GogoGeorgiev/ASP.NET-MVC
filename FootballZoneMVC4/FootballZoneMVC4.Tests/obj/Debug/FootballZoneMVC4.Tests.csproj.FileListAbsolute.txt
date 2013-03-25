@@ -1,0 +1,22 @@
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZoneMVC4.Tests.dll.config
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZoneMVC4.Tests.dll
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZoneMVC4.Tests.pdb
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZoneMVC4.dll
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\System.Web.Optimization.dll
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZoneMVC4.pdb
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\obj\Debug\ResolveAssemblyReference.cache
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\obj\Debug\FootballZoneMVC4.Tests.dll
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\obj\Debug\FootballZoneMVC4.Tests.pdb
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZone.DAL.dll
+c:\users\pc\documents\visual studio 2010\Projects\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZone.DAL.pdb
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZoneMVC4.Tests.dll.config
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZoneMVC4.Tests.dll
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZoneMVC4.Tests.pdb
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZoneMVC4.dll
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZone.DAL.dll
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZoneMVC4.pdb
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\bin\Debug\FootballZone.DAL.pdb
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\obj\Debug\FootballZoneMVC4.Tests.dll
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZoneMVC4.Tests\obj\Debug\FootballZoneMVC4.Tests.pdb

@@ -1,0 +1,28 @@
+﻿@using FootballZoneMVC4.DAL
+@model List<PlayersTeam>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+
+
+@foreach (var item in Model)
+{
+    
+    <div>
+    @item.Player.PlayerNames 
+    @item.Team.Name 
+    @item.FromDate 
+    @item.ToDate
+    @item.PlayerKind
+    @item.Player.Biography
+    
+    </div>
+    <hr>
+    
+}

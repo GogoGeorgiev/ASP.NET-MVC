@@ -1,0 +1,44 @@
+﻿@using FootballZoneMVC4.Models;
+@model List<FootballMatchesViewModel>
+
+@{
+    ViewBag.Title = "Футболни мачове";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 align="center">Резултати от футболни мачове</h2>
+
+<table align="center" class="fmatch">
+    <tr>
+        <th> </th>
+        <th>Турнир </th>
+        <th>Отбор </th> 
+        <th>Срещу </th>
+        <th>Отбор </th>
+        <th>Резултат </th>
+        <th>Дата </th>
+        <th> </th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        
+        <div class="cont">
+        
+        <tr>
+            <td><img src="../../Images/ball2.jpg">  </td>
+            <td>@item.TournamentID </td>
+            <td>@item.TeamA </td>
+            <td>Срещу </td>
+            <td>@item.TeamB </td>
+            <td>@item.FinalScore </td>
+            <td>@item.MatchDate </td>
+            <td>@Html.ActionLink("Виж още...", "../RefereesInMatches/viewRefereesInMatches", new {id = item.ID })</td>
+
+       </tr>
+      
+        </div>
+    }
+
+</table>

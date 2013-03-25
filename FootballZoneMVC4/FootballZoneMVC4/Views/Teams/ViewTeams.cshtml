@@ -1,0 +1,34 @@
+﻿@using FootballZoneMVC4.Models;
+@model List<TeamsViewModel>
+
+@{
+    ViewBag.Title = "Футболни отбори";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 align="center">Футболни Отбори</h2>
+
+
+@foreach (var item in Model)
+{
+    <div class="cont">
+        <div class="image">@Html.Image(item.ImageUrl, item.Name) </div>
+        <div class="name"><p class="nam">@item.Name </p></div>
+        <p class="info">@item.Biography </p>
+        <p> @*@Html.ActionLink("Вижте подробности...", "TeamDetails", new { id=item.ID })*@
+        @Html.ActionLink("Вижте играчите...", "../PlayersInTeams/viewPlayersInTeams", new {id = item.ID })
+        @Html.ActionLink("Вижте стадионите...", "../StadiumsInTeams/viewStadiumsInTeams", new {id = item.ID })
+        @Html.ActionLink("Вижте спонсорите...", "../SponsorsInTeams/viewSponsorsInTeams", new {id = item.ID })
+        @Html.ActionLink("Вижте треньорите...", "../CoachesInTeams/viewCoachesInTeams", new {id = item.ID})
+        @Html.ActionLink("Вижте собствениците...", "../OwnersInTeams/viewOwnersInTeams", new {id = item.ID })
+       
+        
+        </p>
+     </div>   
+        
+   
+}
+
+
+
+    

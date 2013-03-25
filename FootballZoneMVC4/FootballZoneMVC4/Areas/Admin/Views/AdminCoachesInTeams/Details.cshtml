@@ -1,0 +1,49 @@
+﻿@model FootballZoneMVC4.DAL.CoachesTeam
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>CoachesTeam</legend>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Coach.CoachNames)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Coach.CoachNames)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Team.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Team.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FromDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FromDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ToDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ToDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CoachKind)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CoachKind)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CoachID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

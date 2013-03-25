@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FootballZoneModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="FootballZoneMVC4Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CoachesTeams" EntityType="FootballZoneModel.CoachesTeam" />
+    <EntitySet Name="Countries" EntityType="FootballZoneModel.Country" />
+    <EntitySet Name="FootballMatches" EntityType="FootballZoneModel.FootballMatch" />
+    <EntitySet Name="OwnersTeams" EntityType="FootballZoneModel.OwnersTeam" />
+    <EntitySet Name="PlayersTeams" EntityType="FootballZoneModel.PlayersTeam" />
+    <EntitySet Name="Referees" EntityType="FootballZoneModel.Referee" />
+    <EntitySet Name="RefereesMatches" EntityType="FootballZoneModel.RefereesMatch" />
+    <EntitySet Name="SponsorsTeams" EntityType="FootballZoneModel.SponsorsTeam" />
+    <EntitySet Name="Stadiums" EntityType="FootballZoneModel.Stadium" />
+    <EntitySet Name="StadiumsTeams" EntityType="FootballZoneModel.StadiumsTeam" />
+    <EntitySet Name="Teams" EntityType="FootballZoneModel.Team" />
+    <AssociationSet Name="FK_CoachesTeams_Teams" Association="FootballZoneModel.FK_CoachesTeams_Teams">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="CoachesTeams" EntitySet="CoachesTeams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teams_Countries" Association="FootballZoneModel.FK_Teams_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Teams" EntitySet="Teams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FootballMatches_Teams" Association="FootballZoneModel.FK_FootballMatches_Teams">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="FootballMatches" EntitySet="FootballMatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FootballMatches_Teams1" Association="FootballZoneModel.FK_FootballMatches_Teams1">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="FootballMatches" EntitySet="FootballMatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RefereesMatches_FootballMatches" Association="FootballZoneModel.FK_RefereesMatches_FootballMatches">
+      <End Role="FootballMatches" EntitySet="FootballMatches" />
+      <End Role="RefereesMatches" EntitySet="RefereesMatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OwnersTeams_Teams" Association="FootballZoneModel.FK_OwnersTeams_Teams">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="OwnersTeams" EntitySet="OwnersTeams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlayersTeams_Teams" Association="FootballZoneModel.FK_PlayersTeams_Teams">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="PlayersTeams" EntitySet="PlayersTeams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RefereesMatches_Referees" Association="FootballZoneModel.FK_RefereesMatches_Referees">
+      <End Role="Referees" EntitySet="Referees" />
+      <End Role="RefereesMatches" EntitySet="RefereesMatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SponsorsTeams_Teams" Association="FootballZoneModel.FK_SponsorsTeams_Teams">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="SponsorsTeams" EntitySet="SponsorsTeams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StadiumsTeams_Stadiums" Association="FootballZoneModel.FK_StadiumsTeams_Stadiums">
+      <End Role="Stadiums" EntitySet="Stadiums" />
+      <End Role="StadiumsTeams" EntitySet="StadiumsTeams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StadiumsTeams_Teams" Association="FootballZoneModel.FK_StadiumsTeams_Teams">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="StadiumsTeams" EntitySet="StadiumsTeams" />
+    </AssociationSet>
+    <EntitySet Name="Sponsors" EntityType="FootballZoneModel.Sponsor" />
+    <AssociationSet Name="FK_SponsorsTeams_Sponsors" Association="FootballZoneModel.FK_SponsorsTeams_Sponsors">
+      <End Role="Sponsor" EntitySet="Sponsors" />
+      <End Role="SponsorsTeam" EntitySet="SponsorsTeams" />
+    </AssociationSet>
+    <EntitySet Name="FootballAssociations" EntityType="FootballZoneModel.FootballAssociation" />
+    <EntitySet Name="Players" EntityType="FootballZoneModel.Player" />
+    <AssociationSet Name="FK_PlayersTeams_Players" Association="FootballZoneModel.FK_PlayersTeams_Players">
+      <End Role="Player" EntitySet="Players" />
+      <End Role="PlayersTeam" EntitySet="PlayersTeams" />
+    </AssociationSet>
+    <EntitySet Name="Tournaments" EntityType="FootballZoneModel.Tournament" />
+    <AssociationSet Name="FK_Tournaments_FootballAssociations" Association="FootballZoneModel.FK_Tournaments_FootballAssociations">
+      <End Role="FootballAssociation" EntitySet="FootballAssociations" />
+      <End Role="Tournament" EntitySet="Tournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FootballMatches_Tournaments" Association="FootballZoneModel.FK_FootballMatches_Tournaments">
+      <End Role="Tournament" EntitySet="Tournaments" />
+      <End Role="FootballMatch" EntitySet="FootballMatches" />
+    </AssociationSet>
+    <EntitySet Name="Coaches" EntityType="FootballZoneModel.Coach" />
+    <EntitySet Name="Owners" EntityType="FootballZoneModel.Owner" />
+    <AssociationSet Name="FK_CoachesTeams_Coaches" Association="FootballZoneModel.FK_CoachesTeams_Coaches">
+      <End Role="Coach" EntitySet="Coaches" />
+      <End Role="CoachesTeam" EntitySet="CoachesTeams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OwnersTeams_Owners" Association="FootballZoneModel.FK_OwnersTeams_Owners">
+      <End Role="Owner" EntitySet="Owners" />
+      <End Role="OwnersTeam" EntitySet="OwnersTeams" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CoachesTeam">
+    <Key>
+      <PropertyRef Name="CoachID" />
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="CoachID" Type="Int32" Nullable="false" />
+    <Property Name="TeamID" Type="Int32" Nullable="false" />
+    <Property Name="FromDate" Type="DateTime" Nullable="false" />
+    <Property Name="ToDate" Type="DateTime" />
+    <Property Name="CoachKind" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Team" Relationship="FootballZoneModel.FK_CoachesTeams_Teams" FromRole="CoachesTeams" ToRole="Teams" />
+    <NavigationProperty Name="Coach" Relationship="FootballZoneModel.FK_CoachesTeams_Coaches" FromRole="CoachesTeam" ToRole="Coach" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Teams" Relationship="FootballZoneModel.FK_Teams_Countries" FromRole="Countries" ToRole="Teams" />
+    <Property Type="String" Name="ImageUrl" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FootballMatch">
+    <Key>
+      <PropertyRef Name="MatchID" />
+    </Key>
+    <Property Name="MatchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TournamentID" Type="Int32" Nullable="false" />
+    <Property Name="TeamA" Type="Int32" Nullable="false" />
+    <Property Name="TeamB" Type="Int32" Nullable="false" />
+    <Property Name="FinalScore" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MatchDate" Type="DateTime" Nullable="false" />
+    <Property Name="Information" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Team" Relationship="FootballZoneModel.FK_FootballMatches_Teams" FromRole="FootballMatches" ToRole="Teams" />
+    <NavigationProperty Name="Team1" Relationship="FootballZoneModel.FK_FootballMatches_Teams1" FromRole="FootballMatches" ToRole="Teams" />
+    <NavigationProperty Name="RefereesMatches" Relationship="FootballZoneModel.FK_RefereesMatches_FootballMatches" FromRole="FootballMatches" ToRole="RefereesMatches" />
+    <NavigationProperty Name="Tournament" Relationship="FootballZoneModel.FK_FootballMatches_Tournaments" FromRole="FootballMatch" ToRole="Tournament" />
+  </EntityType>
+  <EntityType Name="OwnersTeam">
+    <Key>
+      <PropertyRef Name="OwnerID" />
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="OwnerID" Type="Int32" Nullable="false" />
+    <Property Name="TeamID" Type="Int32" Nullable="false" />
+    <Property Name="FromDate" Type="DateTime" Nullable="false" />
+    <Property Name="ToDate" Type="DateTime" />
+    <NavigationProperty Name="Team" Relationship="FootballZoneModel.FK_OwnersTeams_Teams" FromRole="OwnersTeams" ToRole="Teams" />
+    <NavigationProperty Name="Owner" Relationship="FootballZoneModel.FK_OwnersTeams_Owners" FromRole="OwnersTeam" ToRole="Owner" />
+  </EntityType>
+  <EntityType Name="PlayersTeam">
+    <Key>
+      <PropertyRef Name="PlayerID" />
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="TeamID" Type="Int32" Nullable="false" />
+    <Property Name="FromDate" Type="DateTime" Nullable="false" />
+    <Property Name="ToDate" Type="DateTime" />
+    <Property Name="PlayerKind" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Team" Relationship="FootballZoneModel.FK_PlayersTeams_Teams" FromRole="PlayersTeams" ToRole="Teams" />
+    <NavigationProperty Name="Player" Relationship="FootballZoneModel.FK_PlayersTeams_Players" FromRole="PlayersTeam" ToRole="Player" />
+  </EntityType>
+  <EntityType Name="Referee">
+    <Key>
+      <PropertyRef Name="RefereeID" />
+    </Key>
+    <Property Name="RefereeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RefereeNames" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Biography" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="RefereesMatches" Relationship="FootballZoneModel.FK_RefereesMatches_Referees" FromRole="Referees" ToRole="RefereesMatches" />
+    <Property Type="String" Name="ImageUrl" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RefereesMatch">
+    <Key>
+      <PropertyRef Name="RefereeID" />
+      <PropertyRef Name="MatchID" />
+    </Key>
+    <Property Name="RefereeID" Type="Int32" Nullable="false" />
+    <Property Name="MatchID" Type="Int32" Nullable="false" />
+    <Property Name="RefereeKind" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="FootballMatch" Relationship="FootballZoneModel.FK_RefereesMatches_FootballMatches" FromRole="RefereesMatches" ToRole="FootballMatches" />
+    <NavigationProperty Name="Referee" Relationship="FootballZoneModel.FK_RefereesMatches_Referees" FromRole="RefereesMatches" ToRole="Referees" />
+  </EntityType>
+  <EntityType Name="SponsorsTeam">
+    <Key>
+      <PropertyRef Name="SponsorID" />
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="SponsorID" Type="Int32" Nullable="false" />
+    <Property Name="TeamID" Type="Int32" Nullable="false" />
+    <Property Name="FromDate" Type="DateTime" Nullable="false" />
+    <Property Name="ToDate" Type="DateTime" />
+    <NavigationProperty Name="Team" Relationship="FootballZoneModel.FK_SponsorsTeams_Teams" FromRole="SponsorsTeams" ToRole="Teams" />
+    <NavigationProperty Name="Sponsor" Relationship="FootballZoneModel.FK_SponsorsTeams_Sponsors" FromRole="SponsorsTeam" ToRole="Sponsor" />
+  </EntityType>
+  <EntityType Name="Stadium">
+    <Key>
+      <PropertyRef Name="StadiumID" />
+    </Key>
+    <Property Name="StadiumID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Information" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="StadiumsTeams" Relationship="FootballZoneModel.FK_StadiumsTeams_Stadiums" FromRole="Stadiums" ToRole="StadiumsTeams" />
+    <Property Type="String" Name="ImageUrl" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="StadiumsTeam">
+    <Key>
+      <PropertyRef Name="StadiumID" />
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="StadiumID" Type="Int32" Nullable="false" />
+    <Property Name="TeamID" Type="Int32" Nullable="false" />
+    <Property Name="FromDate" Type="DateTime" Nullable="false" />
+    <Property Name="ToDate" Type="DateTime" />
+    <NavigationProperty Name="Stadium" Relationship="FootballZoneModel.FK_StadiumsTeams_Stadiums" FromRole="StadiumsTeams" ToRole="Stadiums" />
+    <NavigationProperty Name="Team" Relationship="FootballZoneModel.FK_StadiumsTeams_Teams" FromRole="StadiumsTeams" ToRole="Teams" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="TeamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Biography" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CoachesTeams" Relationship="FootballZoneModel.FK_CoachesTeams_Teams" FromRole="Teams" ToRole="CoachesTeams" />
+    <NavigationProperty Name="Country" Relationship="FootballZoneModel.FK_Teams_Countries" FromRole="Teams" ToRole="Countries" />
+    <NavigationProperty Name="FootballMatches" Relationship="FootballZoneModel.FK_FootballMatches_Teams" FromRole="Teams" ToRole="FootballMatches" />
+    <NavigationProperty Name="FootballMatches1" Relationship="FootballZoneModel.FK_FootballMatches_Teams1" FromRole="Teams" ToRole="FootballMatches" />
+    <NavigationProperty Name="OwnersTeams" Relationship="FootballZoneModel.FK_OwnersTeams_Teams" FromRole="Teams" ToRole="OwnersTeams" />
+    <NavigationProperty Name="PlayersTeams" Relationship="FootballZoneModel.FK_PlayersTeams_Teams" FromRole="Teams" ToRole="PlayersTeams" />
+    <NavigationProperty Name="SponsorsTeams" Relationship="FootballZoneModel.FK_SponsorsTeams_Teams" FromRole="Teams" ToRole="SponsorsTeams" />
+    <NavigationProperty Name="StadiumsTeams" Relationship="FootballZoneModel.FK_StadiumsTeams_Teams" FromRole="Teams" ToRole="StadiumsTeams" />
+    <Property Type="String" Name="ImageUrl" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_CoachesTeams_Teams">
+    <End Role="Teams" Type="FootballZoneModel.Team" Multiplicity="1" />
+    <End Role="CoachesTeams" Type="FootballZoneModel.CoachesTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="CoachesTeams">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teams_Countries">
+    <End Role="Countries" Type="FootballZoneModel.Country" Multiplicity="1" />
+    <End Role="Teams" Type="FootballZoneModel.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Teams">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FootballMatches_Teams">
+    <End Role="Teams" Type="FootballZoneModel.Team" Multiplicity="1" />
+    <End Role="FootballMatches" Type="FootballZoneModel.FootballMatch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="FootballMatches">
+        <PropertyRef Name="TeamA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FootballMatches_Teams1">
+    <End Role="Teams" Type="FootballZoneModel.Team" Multiplicity="1" />
+    <End Role="FootballMatches" Type="FootballZoneModel.FootballMatch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="FootballMatches">
+        <PropertyRef Name="TeamB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RefereesMatches_FootballMatches">
+    <End Role="FootballMatches" Type="FootballZoneModel.FootballMatch" Multiplicity="1" />
+    <End Role="RefereesMatches" Type="FootballZoneModel.RefereesMatch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FootballMatches">
+        <PropertyRef Name="MatchID" />
+      </Principal>
+      <Dependent Role="RefereesMatches">
+        <PropertyRef Name="MatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OwnersTeams_Teams">
+    <End Role="Teams" Type="FootballZoneModel.Team" Multiplicity="1" />
+    <End Role="OwnersTeams" Type="FootballZoneModel.OwnersTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="OwnersTeams">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlayersTeams_Teams">
+    <End Role="Teams" Type="FootballZoneModel.Team" Multiplicity="1" />
+    <End Role="PlayersTeams" Type="FootballZoneModel.PlayersTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="PlayersTeams">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RefereesMatches_Referees">
+    <End Role="Referees" Type="FootballZoneModel.Referee" Multiplicity="1" />
+    <End Role="RefereesMatches" Type="FootballZoneModel.RefereesMatch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Referees">
+        <PropertyRef Name="RefereeID" />
+      </Principal>
+      <Dependent Role="RefereesMatches">
+        <PropertyRef Name="RefereeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SponsorsTeams_Teams">
+    <End Role="Teams" Type="FootballZoneModel.Team" Multiplicity="1" />
+    <End Role="SponsorsTeams" Type="FootballZoneModel.SponsorsTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="SponsorsTeams">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StadiumsTeams_Stadiums">
+    <End Role="Stadiums" Type="FootballZoneModel.Stadium" Multiplicity="1" />
+    <End Role="StadiumsTeams" Type="FootballZoneModel.StadiumsTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stadiums">
+        <PropertyRef Name="StadiumID" />
+      </Principal>
+      <Dependent Role="StadiumsTeams">
+        <PropertyRef Name="StadiumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StadiumsTeams_Teams">
+    <End Role="Teams" Type="FootballZoneModel.Team" Multiplicity="1" />
+    <End Role="StadiumsTeams" Type="FootballZoneModel.StadiumsTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="StadiumsTeams">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sponsor">
+    <Key>
+      <PropertyRef Name="SponsorID" />
+    </Key>
+    <Property Type="Int32" Name="SponsorID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Information" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ImageUrl" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SponsorsTeams" Relationship="FootballZoneModel.FK_SponsorsTeams_Sponsors" FromRole="Sponsor" ToRole="SponsorsTeam" />
+  </EntityType>
+  <Association Name="FK_SponsorsTeams_Sponsors">
+    <End Type="FootballZoneModel.Sponsor" Role="Sponsor" Multiplicity="1" />
+    <End Type="FootballZoneModel.SponsorsTeam" Role="SponsorsTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sponsor">
+        <PropertyRef Name="SponsorID" />
+      </Principal>
+      <Dependent Role="SponsorsTeam">
+        <PropertyRef Name="SponsorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FootballAssociation">
+    <Key>
+      <PropertyRef Name="AssociationID" />
+    </Key>
+    <Property Type="Int32" Name="AssociationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Information" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ImageUrl" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tournaments" Relationship="FootballZoneModel.FK_Tournaments_FootballAssociations" FromRole="FootballAssociation" ToRole="Tournament" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="PlayerID" />
+    </Key>
+    <Property Type="Int32" Name="PlayerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PlayerNames" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Biography" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ImageUrl" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PlayersTeams" Relationship="FootballZoneModel.FK_PlayersTeams_Players" FromRole="Player" ToRole="PlayersTeam" />
+  </EntityType>
+  <Association Name="FK_PlayersTeams_Players">
+    <End Type="FootballZoneModel.Player" Role="Player" Multiplicity="1" />
+    <End Type="FootballZoneModel.PlayersTeam" Role="PlayersTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="PlayersTeam">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Tournament">
+    <Key>
+      <PropertyRef Name="TournamentID" />
+    </Key>
+    <Property Type="Int32" Name="TournamentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Information" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="AssociationID" />
+    <Property Type="String" Name="ImageUrl" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FootballAssociation" Relationship="FootballZoneModel.FK_Tournaments_FootballAssociations" FromRole="Tournament" ToRole="FootballAssociation" />
+    <NavigationProperty Name="FootballMatches" Relationship="FootballZoneModel.FK_FootballMatches_Tournaments" FromRole="Tournament" ToRole="FootballMatch" />
+  </EntityType>
+  <Association Name="FK_Tournaments_FootballAssociations">
+    <End Type="FootballZoneModel.FootballAssociation" Role="FootballAssociation" Multiplicity="0..1" />
+    <End Type="FootballZoneModel.Tournament" Role="Tournament" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FootballAssociation">
+        <PropertyRef Name="AssociationID" />
+      </Principal>
+      <Dependent Role="Tournament">
+        <PropertyRef Name="AssociationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FootballMatches_Tournaments">
+    <End Type="FootballZoneModel.Tournament" Role="Tournament" Multiplicity="1" />
+    <End Type="FootballZoneModel.FootballMatch" Role="FootballMatch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournament">
+        <PropertyRef Name="TournamentID" />
+      </Principal>
+      <Dependent Role="FootballMatch">
+        <PropertyRef Name="TournamentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Coach">
+    <Key>
+      <PropertyRef Name="CoachID" />
+    </Key>
+    <Property Type="Int32" Name="CoachID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CoachNames" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Biography" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ImageUrl" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CoachesTeams" Relationship="FootballZoneModel.FK_CoachesTeams_Coaches" FromRole="Coach" ToRole="CoachesTeam" />
+  </EntityType>
+  <EntityType Name="Owner">
+    <Key>
+      <PropertyRef Name="OwnerID" />
+    </Key>
+    <Property Type="Int32" Name="OwnerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="OwnerNames" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Biography" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ImageUrl" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OwnersTeams" Relationship="FootballZoneModel.FK_OwnersTeams_Owners" FromRole="Owner" ToRole="OwnersTeam" />
+  </EntityType>
+  <Association Name="FK_CoachesTeams_Coaches">
+    <End Type="FootballZoneModel.Coach" Role="Coach" Multiplicity="1" />
+    <End Type="FootballZoneModel.CoachesTeam" Role="CoachesTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coach">
+        <PropertyRef Name="CoachID" />
+      </Principal>
+      <Dependent Role="CoachesTeam">
+        <PropertyRef Name="CoachID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OwnersTeams_Owners">
+    <End Type="FootballZoneModel.Owner" Role="Owner" Multiplicity="1" />
+    <End Type="FootballZoneModel.OwnersTeam" Role="OwnersTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owner">
+        <PropertyRef Name="OwnerID" />
+      </Principal>
+      <Dependent Role="OwnersTeam">
+        <PropertyRef Name="OwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

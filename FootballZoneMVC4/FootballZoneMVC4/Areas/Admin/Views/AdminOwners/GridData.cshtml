@@ -1,0 +1,19 @@
+﻿@model IEnumerable<FootballZoneMVC4.DAL.Owner>
+
+@foreach (var item in Model) {
+    <tr data-pkey="@item.OwnerID">
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerNames)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Biography)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageUrl)
+        </td>
+        <td class="rowControl hidden">
+            <a href="#makeRowEditable" class="makeRowEditable">Edit</a> |
+            <a href="#deleteRow" class="deleteRow">Delete</a>
+        </td>
+    </tr>
+}

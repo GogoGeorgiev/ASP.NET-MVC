@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+    <head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>@ViewBag.Title </title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
+        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />
+        <script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")"></script>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("Футболна зона!", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                        @{
+                            if(User.IsInRole("Admin"))
+                            {
+                            <li>@Html.ActionLink("Админ", "AdminTeams", "Admin")</li>
+                            }
+                        }
+                            <li>@Html.ActionLink("Начало", "Index", "Home")</li>
+                            <li>@Html.ActionLink("За сайта", "About", "Home")</li>
+                            <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
+                             <br/><hr size="2px" color="white""/>
+                            <li>@Html.ActionLink("Отбори", "ViewTeams", "Teams")</li>
+                            <li>@Html.ActionLink("Футболисти", "ViewPlayers", "Players")</li>
+                            <li>@Html.ActionLink("Турнири", "ViewTournaments", "Tournaments")</li>
+                            <li>@Html.ActionLink("Асоциации", "ViewAssociations", "FootballAssociations")</li>
+                            <li>@Html.ActionLink("Треньори", "ViewCoaches", "Coaches")</li>
+                            <li>@Html.ActionLink("Собственици", "ViewOwners", "Owners")</li>
+                            <li>@Html.ActionLink("Спонсори", "ViewSponsors", "Sponsors")</li>
+                            <li>@Html.ActionLink("Стадиони", "ViewStadiums", "Stadiums")</li>
+                            <li>@Html.ActionLink("Съдии", "ViewReferees", "Referees")</li>
+                            <li>@Html.ActionLink("Футболни мачове", "ViewFootballMatches", "FootballMatches")</li>
+                            
+                        </ul>
+                    </nav>
+                     
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - Георги Георгиев </p>
+                    <p>Футболна зона v1.0</p>
+                </div>
+                <div class="float-right">
+                    <ul id="social">
+                        <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
+                        <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
+ 

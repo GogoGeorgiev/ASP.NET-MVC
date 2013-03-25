@@ -1,0 +1,41 @@
+﻿@model ForumPost
+
+@{
+    ViewBag.Title = "Create new Forum Post";
+}
+
+<h2>Create new Forum Post</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset class="createPostForm">
+        <legend>Create new Forum Post</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryId, "Category")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CategoryId", String.Empty)
+             
+            @Html.ValidationMessageFor(model => model.CategoryId)
+        </div>
+            @Html.LabelFor(model => model.Content)
+            @Html.Kendo().Editor().Name("Content").HtmlAttributes(new { style = "width:550px;height:350px" }).Value("")
+            @Html.ValidationMessageFor(model => model.Content)
+        <p>
+            <input type="submit" value="Ask Question" />
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

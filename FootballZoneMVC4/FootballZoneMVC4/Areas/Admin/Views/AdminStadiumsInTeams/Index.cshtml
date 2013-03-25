@@ -1,0 +1,52 @@
+﻿@model IEnumerable<FootballZoneMVC4.DAL.StadiumsTeam>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+         <th>
+            @Html.DisplayNameFor(model => model.Stadium.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Team.Name)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.FromDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToDate)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+         <td>
+            @Html.DisplayFor(modelItem => item.Stadium.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Team.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.StadiumID }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.StadiumID  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.StadiumID  })
+        </td>
+    </tr>
+}
+
+</table>

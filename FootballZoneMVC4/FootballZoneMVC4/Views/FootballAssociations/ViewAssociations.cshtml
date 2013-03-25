@@ -1,0 +1,21 @@
+﻿@using FootballZoneMVC4.Models;
+@model List<FootballAssociationsViewModel>
+
+@{
+    ViewBag.Title = "Асоциации";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 align="center">Футболни асоциации</h2>
+
+
+@foreach (var item in Model)
+{
+    <div class="cont">
+        <div class="image">@Html.Image(item.ImageUrl, item.Name) </div>
+        <div class="name"><p class="nam">@item.Name </p></div>
+        <text class="info">@item.Information </text>
+     </div>   
+        
+   
+}

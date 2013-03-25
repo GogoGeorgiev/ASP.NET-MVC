@@ -1,0 +1,15 @@
+﻿@model IPagedList<ForumPostViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<form method="get" action="@Url.Action("Index")"
+    data-mvcForum-ajax="true" data-mvcForum-target="#forumList">
+
+    <input class="searchInput" type="search" name="searchTerm" />
+    <input type="submit" value="Search" />
+</form>
+
+@Html.Partial("_Posts", Model)
+

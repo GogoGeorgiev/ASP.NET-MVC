@@ -1,0 +1,48 @@
+﻿@model FootballZoneMVC4.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Регистрация";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Използвайте формата отдолу за да си създадете потребителски акаунт.</h2>
+</hgroup>
+
+<p class="message-info">
+   Паролата трябва да е минимум от @Membership.MinRequiredPasswordLength символа.
+</p>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "Account")) {
+    @Html.ValidationSummary(true, "Неуспешна регистрация! Моля поправете грешките и опитайте отново.")
+
+    <fieldset>
+        <legend>Форма за регистрация</legend>
+        <ol>
+            <li>
+                <b> Потребителско име</b><br>
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                <b>E-mail адрес</b><br>
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+            </li>
+            <li>
+               <b>Парола </b><br>
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                 <b>Отново паролата</b><br>
+                @Html.PasswordFor(m => m.ConfirmPassword)
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </li>
+        </ol>
+        <input type="submit" value="Регистрирай се" />
+    </fieldset>
+}

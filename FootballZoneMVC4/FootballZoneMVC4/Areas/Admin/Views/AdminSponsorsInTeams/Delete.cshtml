@@ -1,0 +1,46 @@
+﻿@model FootballZoneMVC4.DAL.SponsorsTeam
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>SponsorsTeam</legend>
+
+     <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sponsor.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sponsor.Name)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Team.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Team.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FromDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FromDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ToDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ToDate)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

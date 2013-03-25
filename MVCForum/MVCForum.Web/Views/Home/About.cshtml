@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<h2>
+    About this Project and Me:
+</h2>
+
+<h3 class="aboutMe">
+     Name: Georgi Georgiev 
+</h3>
+
+<h3 class="aboutMe">
+    Email: gogo.georgiev90@gmail.com
+</h3>
+
+<h3 class="aboutMe">
+   Blog: <a href="http://gogogeorgiev.wordpress.com" target="_blank">gogogeorgiev.wordpress.com</a>
+</h3>
+
+<h3 class="aboutProject">
+   Used technologies: ASP.NET MVC 4.0
+</h3>
+
+
+    <h4 class="descriptionProject">   
+        ASP.NET MVC gives you a powerful, patterns-based way to build 
+        dynamic websites that enables a clean separation of concerns 
+        and that gives you full control over markup for enjoyable, agile
+         development. ASP.NET MVC includes many features that enable fast, 
+        TDD-friendly development for creating sophisticated applications
+         that use the latest web standards.
+    </h4>
+
+<h3 class="aboutProject">
+  User Interface - KENDO UI - Thanks to <a href="http://telerikacademy.com">Telerik Academy</a>, who allows me use KENDO UI free with non commercial purpose for my projects.
+</h3>
+
+<h4 class="descriptionProject">
+Kendo UI is everything professional developers need to build HTML5 sites and mobile apps. Today, productivity of an average HTML/jQuery developer is hampered by assembling a Frankenstein framework of disparate JavaScript libraries 
+and plug-ins.
+Kendo UI has it all: rich jQuery-based widgets, a simple and consistent programming interface, a rock-solid DataSource, validation, internationalization, a MVVM framework, themes, templates and the list goes on.
+</h4>
+
+<h3>
+  
+</h3>
+ 
+
+@Html.Kendo().Calendar().Name("calendar").Value(DateTime.Today)

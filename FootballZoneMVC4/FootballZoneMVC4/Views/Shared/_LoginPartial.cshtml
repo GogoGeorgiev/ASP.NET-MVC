@@ -1,0 +1,14 @@
+﻿<head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+@if (Request.IsAuthenticated) {
+    <p>
+        Hello, @Html.ActionLink(User.Identity.Name, "ChangePassword", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Смяна на парола" })!
+        @Html.ActionLink("Излез", "LogOff", "Account")
+    </p>
+} else {
+    <ul>
+        <li>@Html.ActionLink("Регистрирай се", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", data_dialog_title = "Регистрация" })</li>
+        <li>@Html.ActionLink("Вход", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", data_dialog_title = "Идентификация" })</li>
+    </ul>
+}

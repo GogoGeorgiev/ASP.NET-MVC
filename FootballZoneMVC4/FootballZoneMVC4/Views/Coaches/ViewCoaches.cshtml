@@ -1,0 +1,20 @@
+﻿@using FootballZoneMVC4.Models;
+@model List<CoachesViewModel>
+
+@{
+    ViewBag.Title = "Треньори";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 align="center">Футболни треньори</h2>
+
+@foreach (var item in Model)
+{
+    <div class="cont">
+        <div class="image">@Html.Image(item.ImageUrl, item.CoachNames) </div>
+        <div class="name"><p class="nam">@item.CoachNames </p></div>
+        <text class="info">@item.Biography </text>
+     </div>   
+        
+   
+}

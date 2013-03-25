@@ -1,0 +1,42 @@
+﻿@model FootballZoneMVC4.DAL.OwnersTeam
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>OwnersTeam</legend>
+     <div class="display-label">
+         @Html.DisplayNameFor(model => model.Owner.OwnerNames)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner.OwnerNames)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Team.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Team.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FromDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FromDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ToDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ToDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.OwnerID  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

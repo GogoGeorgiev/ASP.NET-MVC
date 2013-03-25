@@ -1,0 +1,41 @@
+﻿@model FootballZoneMVC4.DAL.StadiumsTeam
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>StadiumsTeam</legend>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Stadium.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Stadium.Name)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Team.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Team.Name)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FromDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FromDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ToDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ToDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.StadiumID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

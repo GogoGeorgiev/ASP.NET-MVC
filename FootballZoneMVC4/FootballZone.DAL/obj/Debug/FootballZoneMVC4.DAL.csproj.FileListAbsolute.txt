@@ -1,0 +1,12 @@
+C:\Users\pc\Documents\Visual Studio 2010\Projects\FootballZone\FootballZone.DAL\bin\Debug\FootballZone.DAL.dll.config
+C:\Users\pc\Documents\Visual Studio 2010\Projects\FootballZone\FootballZone.DAL\bin\Debug\FootballZone.DAL.dll
+C:\Users\pc\Documents\Visual Studio 2010\Projects\FootballZone\FootballZone.DAL\bin\Debug\FootballZone.DAL.pdb
+C:\Users\pc\Documents\Visual Studio 2010\Projects\FootballZone\FootballZone.DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\pc\Documents\Visual Studio 2010\Projects\FootballZone\FootballZone.DAL\obj\Debug\FootballZone.DAL.dll
+C:\Users\pc\Documents\Visual Studio 2010\Projects\FootballZone\FootballZone.DAL\obj\Debug\FootballZone.DAL.pdb
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZone.DAL\bin\Debug\FootballZone.DAL.dll.config
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZone.DAL\bin\Debug\FootballZone.DAL.dll
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZone.DAL\bin\Debug\FootballZone.DAL.pdb
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZone.DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZone.DAL\obj\Debug\FootballZone.DAL.dll
+C:\Users\pc\Desktop\FootballZoneMVC4\FootballZone.DAL\obj\Debug\FootballZone.DAL.pdb

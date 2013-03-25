@@ -1,0 +1,29 @@
+﻿@model FootballZoneMVC4.DAL.Team
+
+<tr @if (Model != null) {
+    @:data-pkey="@Model.TeamID"
+}>
+    <td>
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </td>
+    <td>
+        @Html.TextAreaFor(model => model.Biography)
+        @Html.ValidationMessageFor(model => model.Biography)
+    </td>
+    <td>
+        @Html.DropDownList("CountryID", String.Empty)
+        @Html.ValidationMessageFor(model => model.CountryID)
+    </td>
+    <td>
+        @Html.TextAreaFor(model => model.ImageUrl)
+        @Html.ValidationMessageFor(model => model.ImageUrl)
+    </td>
+    <td>
+@if (ViewContext.RouteData.Values["Action"].ToString() == "Edit") {
+        <button class="editRow">Save</button><button class="cancelEditRow">Cancel</button>
+} else {
+        <button class="createRow">Create</button><button class="cancelCreateRow">Cancel</button>
+}
+    </td>
+</tr>

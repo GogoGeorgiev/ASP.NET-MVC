@@ -1,0 +1,31 @@
+﻿@using FootballZoneMVC4.DAL
+@using FootballZoneMVC4.Models
+@model List<StadiumsInTeamsViewModel>
+
+@{
+    ViewBag.Title = "viewPlayersInTeams";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 align="center">Стадион/и на отбора </h2>
+
+
+
+
+    @foreach (var item in Model)
+    {
+        
+        <div class="cont">
+        <div class="image">@Html.Image(@item.ImageUrl, @item.Stadium)</div>
+        <div class="name"><p class="nam">@item.Stadium </p></div>
+        <p><b> От дата: </b> @item.FromDate </p>
+        <p><b> До дата: </b>@item.ToDate </p>
+        <p><b>Официален стадион </b></p>
+        <p><b>Информация --> </b></p>
+        <div class="Detinfo">@item.Information </div>
+      
+        </div>
+    }
+
+

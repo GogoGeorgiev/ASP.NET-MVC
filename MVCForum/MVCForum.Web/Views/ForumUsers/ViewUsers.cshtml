@@ -1,0 +1,24 @@
+﻿@model IPagedList<ForumUserViewModel>
+
+@{
+    ViewBag.Title = "View Users";
+}
+
+<h2 style="text-align:center">View Users(@Model.Count())</h2>
+
+<div id="usersList">
+@foreach (var item in Model)
+{
+    
+    <a class="viewUserNames"  href="/ForumUsers/UserProfile/@item.Id"><div class="viewUserName">
+        @item.Name
+    </div>
+   </a> 
+}
+
+    <div class="pagedList" data-mvcForum-target="#usersList">
+            @Html.PagedListPager(Model, page => Url.Action("ViewUsers", new { page }),
+            PagedListRenderOptions.OnlyShowFivePagesAtATime)
+    </div>
+
+</div>
