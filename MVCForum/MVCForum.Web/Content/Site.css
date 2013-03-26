@@ -958,6 +958,7 @@ tr.pager td {
     font-weight:bold;
     color:black;
     width:633px;
+    height:auto;
     word-wrap:break-word;
     margin-left:120px;
 }
@@ -975,9 +976,11 @@ tr.pager td {
     overflow:auto;
     word-wrap:break-word;
     width:600px;
+    height:auto;
     padding:10px 20px 20px 20px;
     margin-bottom:30px;
     margin-left:120px;
+    margin-top:15px;
 }
 
 .votes-viewPost
@@ -1196,18 +1199,53 @@ tr.pager td {
     margin-left:385px;
 }
 
+/* About Me and Project
+    ----------------------------------------------------------*/
+
 .aboutMe
 {
-    background-color:navajowhite;
+    background-color:orangered;
+    box-shadow:black 3px 3px 0 0;
+    border-radius:6px;
+    padding:5px;
 }
+
+    .aboutMe a
+    {
+        text-decoration:underline;
+        color:black;
+        background:none;
+    }
+
+        .aboutMe a:hover
+        {
+            color:white;
+        }
 
 .aboutProject
 {
-    background-color:#ccc;
+    background-color:darkorange;
+    box-shadow:black 3px 3px 0 0;
+    border-radius:6px;
+    padding:5px;
 }
+
+    .aboutProject a
+    {
+        text-decoration:underline;
+        color:black;
+        background:none;
+    }
+
+        .aboutProject a:hover
+        {
+            color:white;
+        }
 
 .descriptionProject
 {
     background-color:white;
-        
+    box-shadow:black 3px 3px 0 0;
+    border-radius:6px;
+    padding:5px;
 }

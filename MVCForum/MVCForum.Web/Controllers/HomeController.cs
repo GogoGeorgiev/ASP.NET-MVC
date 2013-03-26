@@ -15,6 +15,7 @@ namespace MVCForum.Web.Controllers
 
         public ActionResult Index(string searchTerm = null, int page = 1)
         {
+         
             //Get the last 15 forum posts
             var latestForumPosts = _db.ForumPosts
                 .Where(x => searchTerm == null || x.Title.Contains(searchTerm))
@@ -28,10 +29,13 @@ namespace MVCForum.Web.Controllers
                     UserName = x.Author.UserName,
                     UserId = x.Author.UserId,
                     CreationTime = x.CreationTime,
+                    Answers = _db.ForumPostAnswers.Count(c => c.ForumPost.Id == x.Id),
                     Rating =
                         _db.ForumPostVotes.Count(y => y.Post.Id == x.Id && y.IsUpVote) -
                         _db.ForumPostVotes.Count(y => y.Post.Id == x.Id && !y.IsUpVote)
+                    
                 }).ToPagedList(page, 15);
+
 
             if (Request.IsAjaxRequest())
             {
@@ -44,6 +48,7 @@ namespace MVCForum.Web.Controllers
 
         public ActionResult Category(int id, int page = 1)
         {
+            
             //Get the last 15 categories
             var category = _db.ForumPosts
                 .Where(x => x.CategoryId == id)

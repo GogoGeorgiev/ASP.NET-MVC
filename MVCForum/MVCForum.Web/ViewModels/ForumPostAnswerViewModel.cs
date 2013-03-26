@@ -12,6 +12,7 @@ namespace MVCForum.Web.ViewModels
         public string Content { get; set; }
         public string UserName { get; set; }
         public int UserId { get; set; }
+        public int Count { get; set; }
         public DateTime CreationTime { get; set; }
         public DateTime EditTime { get; set; }
 

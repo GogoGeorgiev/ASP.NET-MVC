@@ -11,13 +11,14 @@ using PagedList;
 
 namespace MVCForum.Web.Controllers
 {
+    
     public class ForumCategoriesController : Controller
     {
         private MVCForumDb db = new MVCForumDb();
 
         //
         // GET: /Categories/
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.ForumCategories.ToList());
@@ -38,7 +39,7 @@ namespace MVCForum.Web.Controllers
 
         //
         // GET: /Categories/Create
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -62,7 +63,7 @@ namespace MVCForum.Web.Controllers
 
         //
         // GET: /Categories/Edit/5
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id = 0)
         {
             ForumCategory forumpostcategory = db.ForumCategories.Find(id);
@@ -90,7 +91,7 @@ namespace MVCForum.Web.Controllers
 
         //
         // GET: /Categories/Delete/5
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id = 0)
         {
             ForumCategory forumpostcategory = db.ForumCategories.Find(id);

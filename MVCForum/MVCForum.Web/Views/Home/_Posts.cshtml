@@ -4,7 +4,6 @@
 
 @foreach (var item in Model)
 {
- 
     <div>
         <div class="votes">
         Rating: <br/>
@@ -30,8 +29,8 @@
         <a class="question" href="/Questions/@item.Id/@item.Title"> <span class="linkTitle"> @item.Title </span></a> 
         <br />
 
-        <p class="userAndTime"> asked by <a href="/ForumUsers/UserProfile/@item.UserId" class="userNameLink"><span class="userName">@item.UserName </span></a> 
-            in <span class="createTime">@item.CreationTime</span> in 
+        <p class="userAndTime"> Started by <a href="/ForumUsers/UserProfile/@item.UserId" class="userNameLink"><span class="userName">@item.UserName</span></a>, 
+            <span class="createTime">@item.CreationTime</span> in 
             <a class="catNameLink" href="/Home/Category/@item.Category"><span class="catName">@item.CategoryName</span></a>
         </p>
         </div>
@@ -43,6 +42,8 @@
         PagedListRenderOptions.OnlyShowFivePagesAtATime)
     </div>
 </div>
-    <script src="~/Scripts/mvcForum.js" type="text/javascript">  </script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"> </script>
+    <script src="~/Scripts/mvcForum.js" type="text/javascript">  </script>
+    
+
  

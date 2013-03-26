@@ -19,7 +19,6 @@ namespace MVCForum.Web.Models
         public UserProfile Author { get; set; }
         public DateTime CreationTime { get; set; }
         public int CategoryId { get; set; }
-        //public ForumPostCategory Category  { get; set; }
         public IEnumerable<ForumPostAnswer> Answer { get; set; }
     }
 }

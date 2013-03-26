@@ -5,6 +5,10 @@
 }
 
 <h2 class="browseCat">Browse Categories(@Model.Count())</h2>
+@if (User.IsInRole("Admin"))
+{
+    @Html.ActionLink("Create Category", "Index", "ForumCategories")
+}
 
 <div id="categoriesList">
 

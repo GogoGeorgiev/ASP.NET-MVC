@@ -17,17 +17,17 @@
 
 <div class="postTitle">@Model.Title </div>
 
-    <p class="viewPost">
+    <div class="viewPost">
 
         <span> @Html.Raw(Model.Content) </span> <br /> <br /> 
 
-        <strong> asked by </strong><a href="/ForumUsers/UserProfile/@Model.UserId" class="userNameLink"> <span class="postUser"> @Model.UserName </span></a> <br/>
+        <strong> Started by </strong><a href="/ForumUsers/UserProfile/@Model.UserId" class="userNameLink"> <span class="postUser"> @Model.UserName</span></a>,
 
         <span class="postTime">@Model.CreationTime </span>  in 
 
         <a class="catNameLink" href="/Home/Category/@Model.Category"><span class="catName">@Model.CategoryName</span></a>
 
-    </p> 
+    </div> 
 
     <span class="answers">Answers(@Model.Answers.Count())</span>
 
